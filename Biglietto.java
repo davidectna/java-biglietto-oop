@@ -16,4 +16,44 @@ passeggero e stampa il prezzo del biglietto calcolato.*/
 
 public class Biglietto {
 
+	//attributes
+	private int kilometers ;
+	private int passengerAge;
+	
+	
+	//constructor
+	public Biglietto(int numberOfKilometers, int passengerYearsOld) {
+		super();
+		this.kilometers = numberOfKilometers;
+		this.passengerAge = passengerYearsOld;
+	}
+	
+	//getter and setter methods
+	public int getKilometers() {
+		return kilometers;
+	}
+	public void setKilometers(int totalKilometers) {
+		kilometers = totalKilometers;
+	}
+	public int getPassengerAge() {
+		return passengerAge;
+	}
+	public void setPassengerAge(int passengerAge) {
+		this.passengerAge = passengerAge;
+	}
+	
+	//methods
+	public double finalPrice(){
+		double ticketPrice = 0;
+		if (passengerAge < 18) {
+			ticketPrice = kilometers*0.21*0.80;
+		}
+		else if (passengerAge > 65) {
+			ticketPrice = kilometers*0.21*0.60;
+		}
+		else {
+			ticketPrice = kilometers*0.21;
+		}
+		return ticketPrice;
+	}
 }
